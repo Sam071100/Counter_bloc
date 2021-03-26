@@ -29,6 +29,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final counterBloc = CounterBloc();
+  
+  @override
+  void dispose() {
+    counterBloc.dispose();
+    super.();
+  }
 
   @override
   Widget build(BuildContext context) {
