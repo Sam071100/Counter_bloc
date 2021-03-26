@@ -32,7 +32,12 @@ class CounterBloc {
       counterSink.add(counter);
     });
   }
-}
+  
+  void dispose() {
+    _eventStreamController.close();
+    _stateStreamController.close();
+  }
+ }
 // State management with BLOC pattern as State Build is called once.
 // eventStream and stateSink is not exposed to the user. Benifits of BLoc pattern
 //Users cannot interact with the above said stream and sinks
